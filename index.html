@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <!--server-client connection-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/forge/0.10.0/forge.min.js"></script>
+    <script defer src="http://localhost:8000/socket.io/socket.io.js"></script>
+    <script defer src="js/client.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="background">
+        <div class="chat-container" style="display: none;">
+            <!-- Chat interface -->
+            <div class="heading">
+                <h1 class="hospital">Noble Hospital</h1>
+                <img class="logo" src="assets/chat.jpg" alt="">
+            </div>
+            <div class="container"></div>
+            <div class="send">
+                <form action="#" id="send-container">
+                    <input type="text" name="mssg" id="mssg">
+                    <button class="btn" type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="login-container">
+        <form id="login-form">
+            <h1>Login</h1>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
