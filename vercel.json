@@ -1,9 +1,29 @@
 {
   "version": 2,
+ {
+  "version": 2,
+  "builds": [
+    {
+      "src": "nodeserver/package.json",
+      "use": "@vercel/node"
+    }
+  ],
   "routes": [
     {
-      "src": "/nodeserver/(.*)",
-      "dest": "nodeserver/$1"
+      "src": "/socket.io/(.*)",
+      "dest": "nodeserver/index.js"
+    },
+    {
+      "src": "/js/(.*)",
+      "dest": "js/$1"
+    },
+    {
+      "src": "/css/(.*)",
+      "dest": "css/$1"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "assets/$1"
     },
     {
       "src": "/(.*)",
@@ -12,4 +32,26 @@
   ]
 }
 
-  
+  "routes": [
+    {
+      "src": "/socket.io/(.*)", // Route for WebSocket communication
+      "dest": "nodeserver/index.js" // Direct WebSocket requests to your Node.js server
+    },
+    {
+      "src": "/js/(.*)", // Route for JavaScript files
+      "dest": "js/$1" // Serve JavaScript files from the 'js' directory in your project
+    },
+    {
+      "src": "/css/(.*)", // Route for CSS files
+      "dest": "css/$1" // Serve CSS files from the 'css' directory in your project
+    },
+    {
+      "src": "/assets/(.*)", // Route for asset files (images, etc.)
+      "dest": "assets/$1" // Serve asset files from the 'assets' directory in your project
+    },
+    {
+      "src": "/(.*)", // Default route for all other requests
+      "dest": "index.html" // Serve the main HTML file for the chat app
+    }
+  ]
+}
